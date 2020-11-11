@@ -1,2 +1,3 @@
 # Grassroots-Democrats
-Grassroots Democrats tools for tech and automation
+
+GDHQ brings to you extra democracy through tech.
