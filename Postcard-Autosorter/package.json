@@ -1,0 +1,32 @@
+{
+  "name": "postcard-autosorter",
+  "version": "1.0.0",
+  "description": "GDHQ postcard autosorting desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.gdhq.postcard_autosorter",
+    "win": {
+      "target": "NSIS"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShreyJ1729/Grassroots-Democrats.git"
+  },
+  "author": "Shrey Joshi & Pratyush Mallick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShreyJ1729/Grassroots-Democrats/issues"
+  },
+  "homepage": "https://github.com/ShreyJ1729/Grassroots-Democrats#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  }
+}
