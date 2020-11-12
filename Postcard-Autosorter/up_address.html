@@ -43,14 +43,12 @@
     const { ipcRenderer } = require('electron');
 
     async function clickButton() {
-        ipcRenderer.invoke('signup-click-button', 'true');
+        ipcRenderer.invoke('address-click-button', 'true');
         console.log('button click registered')
     };
 
     ipcRenderer.on('fileData', (event, data) => {
-        console.log("BACKEND RECEIVED DATA");
         console.log(data);
-        document.write(data);
     });
 
 </script>

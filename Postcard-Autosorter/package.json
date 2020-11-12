@@ -24,7 +24,9 @@
     "url": "https://github.com/ShreyJ1729/Grassroots-Democrats/issues"
   },
   "homepage": "https://github.com/ShreyJ1729/Grassroots-Democrats#readme",
-  "dependencies": {},
+  "dependencies": {
+    "browserify": "^17.0.0"
+  },
   "devDependencies": {
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1"
