@@ -1,0 +1,56 @@
+{
+  "manifest_version": 2,
+
+  "name": "Grassroots Democrats HQ Autotexter",
+
+  "short_name": "GDHQ Autotexter",
+
+  "description": "Powering the blue wave, one text at a time.",
+
+  "version": "1.0.1",
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "default_title": "Bulk SMS",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://hangouts.google.com/webchat/*"],
+      "js": [
+        "contentScripts/hangoutsListViewManager.js",
+        "contentScripts/hangoutsThreadViewManager.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://voice.google.com/*"],
+      "js": [
+        "contentScripts/googleVoiceManager.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": ["https://hangouts.google.com/webchat/*", "https://voice.google.com/*"],
+      "js": [
+        "contentScripts/tools.js",
+        "contentScripts/main.js"
+      ],
+      "all_frames": true
+    }
+  ],
+
+  "icons": { "48": "icon48.png",
+             "128": "icon.png" },
+
+  "permissions": [
+    "clipboardWrite",
+    "clipboardRead",
+    "storage"
+  ]
+}

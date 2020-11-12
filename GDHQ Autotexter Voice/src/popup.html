@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GDHQ Autotexter Popup</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+		<style type="text/css">
+			body#popup-body {
+				margin: 10px;
+				white-space: nowrap;
+				font-size: 14px;
+				min-height: 465px;
+				width: 415px;
+				padding: 4px;
+			}
+
+			h1, h2 {
+				width: 100%;
+			}
+			h1 {
+				font-size: 20px;
+			}
+			h2 {
+				font-size: 15px;
+			}
+
+			#ui-wrapper {
+				align-items: center;
+			}
+			.input-group {
+				margin-bottom: 12px;
+			}
+			textarea {
+				display: block;
+				width: 415px;
+				min-height: 60px;
+				resize: vertical;
+			}
+			.input-group textarea#numbers-and-names {
+				font-family: monospace;
+			}
+
+			#send-interval-slider {
+				width: 155px;
+			}
+			#send-interval-output {
+				padding-left: 8px;
+			}
+
+			div.tos-text {
+				white-space: initial;
+				display: inline-block;
+				vertical-align: top;
+				margin-left: 2px;
+			}
+			div.errors {
+				color: red;
+				white-space: initial;
+				width: 100%;
+			}
+			div.tip {
+				font-style: italic;
+				white-space: initial;
+				min-width: 250px;
+			}
+			div.tip pre {
+				margin-bottom: 0;
+			}
+
+			#wrong-page-message a:focus {
+				outline: 0;
+			}
+
+			#hangouts-beta-warning {
+				display: none;
+				white-space: initial;
+			}
+
+			#support-info {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				text-align: right;
+			}
+
+			#version-number {
+				color: #ccc;
+			}
+		</style>
+		<meta charset="UTF-8">
+	</head>
+
+	<body id="popup-body">
+		<h1>Grassroots Democrats HQ Autotexter</h1>
+		<div id="loading-screen">
+			Loading...
+		</div>
+		<div id="ui-wrapper" style="display: none;">
+			<div class="input-group">
+				<h2>Message</h2>
+				<textarea id="message"></textarea>
+				<div class="tip">If you add "{name}" to your message it will be replaced by the corresponding name.</div>
+			</div>
+			<div class="input-group">
+				<h2>Numbers, names</h2>
+				<textarea id="numbers-and-names"></textarea>
+				<div id="numbers-and-names-errors" class="errors"></div>
+				<div class="tip">Example:
+					<pre>(123) 456-7890, Joe Biden
+(111) 111 1111
+(987) 654 3210, Jill</pre>
+				</div>
+			</div>
+			<div class="input-group" id="send-interval-block">
+				<h2>Delay between sends</h2>
+				<input id="send-interval-slider" type="range" min="0" value="0" step="1">
+				<div id="send-interval-output"></div>
+				<div class="tip">Text Prat if you find any bugs (469-449-8399)</pre>
+				</div>
+			</div>
+			<div class="input-group">
+				<label name="gv-tos">
+					<input id="gv-tos-agreement" type="checkbox" name="gv-tos" />
+					<div class="tos-text">
+						PLEASE ACKNOWLEDGE that you will send 1 text at a time! -- Do not spam click.
+					</div>
+				</label>
+			</div>
+			<div id="hangouts-beta-warning">
+				<p>
+
+				</p>
+			</div>
+			<div class="input-group">
+				<button class="btn btn-success" id="send-messages-button" title="Pressing this will send the composed message to all of the listed contacts.">Send Messages</button>
+				<div id="support-info">
+					<div>
+						<a href="mailto:pratyushmallick@outlook.com?subject=Autotexter%20Fix&body=Hey%20Prat%2C%0D%0AThe%20Autotexter%20isn't%20working.%20%5BThis%20is%20my%20problem%5D" target="_blank">Get Help</a>
+					</div>
+					<div id="version-number"></div>
+				</div>
+			</div>
+		</div>
+		<div id="wrong-page-message" style="display: none;">
+			<div class="tip">
+				Unable to find Google Voice on the page.
+			</div>
+			<div class="tip">
+				Try some of the following options:
+				<ul>
+					<li>Make sure you are currently on
+						<a href="https://voice.google.com/messages" target="_blank">Google Voice</a>
+					
+					</li>
+					<li>Try refreshing the page</li>
+					<li>If it still isn't working for you, contact <a href="mailto:pratyushmallick@outlook.com?subject=Autotexter%20Fix&body=Hey%20Prat%2C%0D%0AThe%20Autotexter%20isn't%20working.%20%5BThis%20is%20my%20problem%5D" target="_blank">prat </a>lol </li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="popup.js"></script>
+	<script src="contentScripts/tools.js"></script>
+</html>
